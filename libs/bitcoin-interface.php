@@ -14,7 +14,7 @@ interface Webskin {
 
 interface Bitcoin extends Webskin {
 
-    const bitcoin_version = 32100;
+    const bitcoin_version = 70001;
 
     // Accounts
     public function listaccounts( $minconf=1 );
@@ -25,7 +25,7 @@ interface Bitcoin extends Webskin {
     public function getbalance( $account, $minconf=1 );	
 
     // Transactions
-    public function listtransactions( $account, $count=10 );
+    public function listtransactions( $account, $count=10, $from=0 );
     public function gettransaction( $txid );
 
     // Addresses

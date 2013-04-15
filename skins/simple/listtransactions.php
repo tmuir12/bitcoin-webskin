@@ -12,10 +12,15 @@
 		default: print @$this->account; break;
 	}
 ?> &nbsp; &nbsp; Count: <?php 
-	@$this->count == -1 
+	@$this->count == 9999999
 		? print 'ALL ' . @$this->info['transactions_count']
 		: print 'Limit ' . @$this->count;
-?></p>
+?> &nbsp; &nbsp; Start From: <?php
+     @$this->from == 0
+          ? print 'The newest transaction.'
+          : print 'Skipping the newest ' .$this->from .' transactions.';
+?>
+</p>
 
 <table>
  <tr>
@@ -28,23 +33,21 @@
   <td>Transaction ID</td>
  </tr>
 <?php
-
 	if( !count(@$this->listtransactions) ) {
 		print '<tr><td colspan="8">No Transactions Found</td></tr>';
 	} else {
-		while( list(,$x) = each($this->listtransactions) ) {
+		foreach ($this->listtransactions AS $key => $value) {
 			print '<tr>'
-			. '<td>' .@$x['category'] . '</td>'
-			. '<td class="amount">' .$x['amount'] . '</td>'
-			//. '<td class="conf">' . (isset($x['confirmations']) ? $x['confirmations'] : '-') . '</td>'
-			. '<td class="conf">' . $x['status'] . '</td>'
+			. '<td>' .@$value['category'] . '</td>'
+			. '<td class="amount">' .$value['amount'] . '</td>'
+			. '<td class="conf">' . $value['status'] . '</td>'
 			. '<td><a href="./?a=listtransactions&account=' 
-				. urlencode($x['account']) . '">' . $x['account'] . '</a></td>'
-			. '<td>' . $x['datetime'] . '</td>'
-			. '<td class="address">' . (isset($x['address']) ? $x['address'] : '-') . '</td>'
-			. '<td>' . (isset($x['txid']) 
-					? '<a href="?a=gettransaction&txid=' . urlencode($x['txid']) . '">' 
-						. $x['txid_short'] . '</a>'
+				. urlencode($value['account']) . '">' . $value['account'] . '</a></td>'
+			. '<td>' . $value['datetime'] . '</td>'
+			. '<td class="address">' . (isset($value['address']) ? $value['address'] : '-') . '</td>'
+			. '<td>' . (isset($value['txid'])
+					? '<a href="?a=gettransaction&txid=' . urlencode($value['txid']) . '">'
+						. $value['txid_short'] . '</a>'
 					: '-')
 			. '</td></tr>';
 		} // end each transaction
