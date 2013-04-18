@@ -57,16 +57,16 @@ class BitcoinWebskin {
 					$_GET['account'] = ''; // Default Account
 				}
 				
-				
 				$this->account = $this->get_get('account', '');
-				$this->count = $this->get_get('count', -1);
-				
+				$this->count = $this->get_get('count', 9999999);
+				$this->from = $this->get_get('from', 0);
 
 				$this->listtransactions = $this->wallet->listtransactions(
 					(string) $this->account,
-					(int)    $this->count					
+					(int)    $this->count,
+					(int)    $this->from
 				); 
-				
+
 				$this->info['transactions_count'] = sizeof( $this->listtransactions );
 				
 				$this->listtransactions = @array_reverse( $this->listtransactions );

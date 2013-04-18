@@ -8,7 +8,7 @@
 <p><a href="./?a=about">About Bitcoin Webskin</a></p>
 
 <p><a href="./?a=listtransactions&account=*&count=20">Last 20 Transactions</a>
-<br /><a href="./?a=listtransactions&account=*&count=-1">All Transactions</a></p>
+<br /><a href="./?a=listtransactions&account=*&count=9999999">All Transactions</a></p>
 
 <p><a href="./?a=sendtoaddress">Send Coins to Address</a></p>
 
@@ -61,7 +61,8 @@
 <form action="./" method="GET"><input type="hidden" name="a" value="listtransactions">
 <input type="submit" value="listtransactions"> 
 	account:<input type="text" name="account" value="*" size="20">
-	count:<input type="text" name="count" value="-1" size="3">
+	count:<input type="text" name="count" value="9999999" size="3">
+	from:<input type="text" name="from" value=0 size="3">
 </form>	
 
 <form action="./" method="GET"><input type="hidden" name="a" value="gettransaction">

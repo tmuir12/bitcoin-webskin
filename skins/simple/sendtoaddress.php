@@ -46,7 +46,7 @@ Validating Address: <?php print $this->address; ?>
 Amount: <?php print @$this->num( $this->amount ); ?> Coins
     
 </pre>
-<?
+<?php
 
 	}
 

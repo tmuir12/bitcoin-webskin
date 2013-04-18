@@ -77,9 +77,9 @@ class jsonRPCClientControler implements Bitcoin, Namecoin {
 	}
 	
 	// Transactions
-	public function listtransactions( $account, $count=10 ) { 
+	public function listtransactions( $account, $count=10, $from=0 ) {
 		try { 
-			return $this->tube->listtransactions( (string)$account, (int)$count );
+			return $this->tube->listtransactions( (string)$account, (int)$count, (int)$from );
 		} catch( Exception $e ) {
 			return 'listtransactions() Error: ' . $e->getMessage();
 		}
