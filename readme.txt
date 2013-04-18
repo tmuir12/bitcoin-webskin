@@ -2,13 +2,12 @@ Bitcoin Webskin
 
 an open source PHP web interface to bitcoind and namecoind
 
-Copyright (c) 2011 14STzHS8qjsDPtqpQgcnwWpTaSHadgEewS
+Copyright (c) 2011,2012,2013 14STzHS8qjsDPtqpQgcnwWpTaSHadgEewS
 
-http://webskin.bitcoincommons.org/
 https://github.com/zamgo/bitcoin-webskin
 
 ---------------------------------------------------------------------
-Version 0.0.2 - Prototype release
+Version 0.0.3 - Prototype release
 
 This is an early release of Bitcoin Webskin.  
 
