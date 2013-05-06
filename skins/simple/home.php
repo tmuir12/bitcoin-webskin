@@ -257,14 +257,13 @@
 <form action="./" method="GET">
 <input type="hidden" name="a" value="PHPCoinAddress">
 <pre>
-<input type="submit" value="PHPCoinAddress">   <input type="checkbox" name="coin" 
-value="debug" />[Debug]   <input type="checkbox" name="coin" 
-value="reuse_keys" />[Reuse Keys]
-<input type="checkbox" name="coin" value="bitcoin" />Bitcoin
-<input type="checkbox" name="coin" value="namecoin" />Namecoin
-<input type="checkbox" name="coin" value="litecoin" />Litecoin
-<input type="checkbox" name="coin" value="devcoin" />Devcoin
-<input type="checkbox" name="coin" value="ppcoin" />PPCoin
+<input type="submit" value="PHPCoinAddress">   <input type="checkbox" name="debug" 
+value="1" />[Debug]   <input type="checkbox" name="reuse_keys" value="1" />[Reuse Keys]
+<input type="checkbox" name="coin[]" value="bitcoin" />Bitcoin
+<input type="checkbox" name="coin[]" value="namecoin" />Namecoin
+<input type="checkbox" name="coin[]" value="litecoin" />Litecoin
+<input type="checkbox" name="coin[]" value="devcoin" />Devcoin
+<input type="checkbox" name="coin[]" value="ppcoin" />PPCoin
   
 </pre>
 </form>	

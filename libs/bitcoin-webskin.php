@@ -492,6 +492,22 @@ class BitcoinWebskin {
 				
 			// misc
 			
+			case 'PHPCoinAddress':
+			
+				print 'DEBUG PHPCoinAddress';
+
+				$debug = $this->get_get('debug', '');
+				$reuse_keys = $this->get_get('reuse_keys', '');
+				$coins = $this->get_get('coin[]', '');
+				
+				
+				
+				
+				$this->PHPCoinAddress = "debug:$debug reuse_keys:$reuse_keys coins:$coins";
+				return 'debug';
+				//return 'PHPCoinAddress';
+				break;
+				
 			case 'mtgox':
 			
 				include_once('plugins/mtgox.php');
