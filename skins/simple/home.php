@@ -253,17 +253,17 @@
 </form>	
 */ ?>
 
-<br /><a href="./?a=PHPCoinAddress">PHPCoinAddress</a>
+<br /><a href="./?a=PHPCoinAddress">PHPCoinAddress</a> - Generate new public/private keys
 <form action="./" method="GET">
 <input type="hidden" name="a" value="PHPCoinAddress">
 <pre>
 <input type="submit" value="PHPCoinAddress">   <input type="checkbox" name="debug" 
 value="1" />[Debug]   <input type="checkbox" name="reuse_keys" value="1" />[Reuse Keys]
-<input type="checkbox" name="coin[]" value="bitcoin" />Bitcoin
-<input type="checkbox" name="coin[]" value="namecoin" />Namecoin
-<input type="checkbox" name="coin[]" value="litecoin" />Litecoin
-<input type="checkbox" name="coin[]" value="devcoin" />Devcoin
-<input type="checkbox" name="coin[]" value="ppcoin" />PPCoin
+<input type="checkbox" name="coin[]" value="bitcoin" />Bitcoin   <input type="checkbox" name="coin[]" value="bitcoin_testnet" />Bitcoin Testnet
+<input type="checkbox" name="coin[]" value="namecoin" />Namecoin  <input type="checkbox" name="coin[]" value="namecoin_testnet" />Namecoin Testnet
+<input type="checkbox" name="coin[]" value="litecoin" />Litecoin  <input type="checkbox" name="coin[]" value="litecoin_testnet" />Litecoin Testnet
+<input type="checkbox" name="coin[]" value="devcoin" />Devcoin   <input type="checkbox" name="coin[]" value="devcoin_testnet" />Devcoin Testnet
+<input type="checkbox" name="coin[]" value="ppcoin" />PPCoin    <input type="checkbox" name="coin[]" value="ppcoin_testnet" />PPCoin Testnet
   
 </pre>
 </form>	

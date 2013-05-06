@@ -495,34 +495,49 @@ class BitcoinWebskin {
 			case 'PHPCoinAddress':
 			
 				print 'DEBUG PHPCoinAddress';
+				
+				$lib = 'plugins/PHPCoinAddress.php';
+				if( !is_readable($lib) ) { 
+					print 'ERROR: missing ' . $lib; exit;
+				}
+				require_once($lib);
 
 				$debug = $this->get_get('debug', '');
+				if( $debug ) { 
+					CoinAddress::set_debug(true);
+				}
+				
 				$reuse_keys = $this->get_get('reuse_keys', '');
+				if( $reuse_keys ) { 
+					CoinAddress::set_reuse_keys(true);
+				}
 				$coins = @$_GET['coin'];
 				
 				if( !$coins || !is_array($coins) ) { 
 					print 'ERROR: no coin type'; exit;
 				}
 				
-				$bitcoin_addr = $namecoin_addr = $litecoin_addr = $devcoin_addr = $ppcoin_addr = 0;
+				$bitcoin = $namecoin = $litecoin = $devcoin = $ppcoin = array();
 				while( list(,$x) = each($coins) ) {
 					switch( $x ) { 
-						case 'bitcoin': $bitcoin_addr = 1; break;
-						case 'namecoin': $namecoin_addr = 1; break;
-						case 'litecoin': $litecoin_addr = 1; break;
-						case 'devcoin': $devcoin_addr = 1; break;
-						case 'ppcoin':  $ppcoin_addr = 1; break;
+						case 'bitcoin': $bitcoin = CoinAddress::bitcoin();break;
+						case 'namecoin': $namecoin = CoinAddress::namecoin();break;
+						case 'litecoin': $litecoin = CoinAddress::litecoin();break;
+						case 'devcoin': $devcoin = CoinAddress::devcoin();break;
+						case 'ppcoin': $ppcoin = CoinAddress::ppcoin();break;
 					}
 				}
 				
-				$this->PHPCoinAddress = "debug:$debug 
-				<hr>reuse_keys:$reuse_keys 
-				<hr>bitcoin:$bitcoin_addr
-				<hr>namecoin:$namecoin_addr
-				<hr>devcoin:$devcoin_addr
-				<hr>ppcoin:$ppcoin_addr
-		
-				";
+				$this->PHPCoinAddress = "
+<HR><pre>
+bitcoin : " . @$bitcoin['private'] .' ' . @$bitcoin['public'] . "
+namecoin: " . @$namecoin['private'] .' ' . @$namecoin['public'] . "
+devcoin : " . @$devcoin['private'] .' ' . @$devcoin['public'] . "
+ppcoin  : " . @$ppcoin['private'] .' ' . @$ppcoin['public'] . "
+
+debug:$debug 
+reuse_keys:$reuse_keys 
+</pre>";
 				
 				
 				return 'debug';
