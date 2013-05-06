@@ -245,13 +245,29 @@
 
 <hr />misc:
 
+<?php /*
 <br /><a href="./?a=mtgox">MtGox market data</a>
 <form action="./" method="GET">
 <input type="hidden" name="a" value="deletetransaction"><input type="submit" value="deletetransaction">
 	txid:<input type="text" name="txid" value="" size="68">
 </form>	
+*/ ?>
 
-
+<br /><a href="./?a=PHPCoinAddress">PHPCoinAddress</a>
+<form action="./" method="GET">
+<input type="hidden" name="a" value="PHPCoinAddress">
+<pre>
+<input type="submit" value="PHPCoinAddress">   <input type="checkbox" name="coin" 
+value="debug" />[Debug]   <input type="checkbox" name="coin" 
+value="reuse_keys" />[Reuse Keys]
+<input type="checkbox" name="coin" value="bitcoin" />Bitcoin
+<input type="checkbox" name="coin" value="namecoin" />Namecoin
+<input type="checkbox" name="coin" value="litecoin" />Litecoin
+<input type="checkbox" name="coin" value="devcoin" />Devcoin
+<input type="checkbox" name="coin" value="ppcoin" />PPCoin
+  
+</pre>
+</form>	
 
 <hr /><a name="webskin">Webskin</a>
 
