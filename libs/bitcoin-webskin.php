@@ -517,14 +517,19 @@ class BitcoinWebskin {
 					print 'ERROR: no coin type'; exit;
 				}
 				
-				$bitcoin = $namecoin = $litecoin = $devcoin = $ppcoin = array();
+
 				while( list(,$x) = each($coins) ) {
 					switch( $x ) { 
 						case 'bitcoin': $bitcoin = CoinAddress::bitcoin();break;
+						case 'bitcoin_testnet': $bitcoin_testnet = CoinAddress::bitcoin_testnet();break;
 						case 'namecoin': $namecoin = CoinAddress::namecoin();break;
+						case 'namecoin_testnet': $namecoin_testnet = CoinAddress::namecoin_testnet();break;
 						case 'litecoin': $litecoin = CoinAddress::litecoin();break;
+						case 'litecoin_testnet': $litecoin_testnet = CoinAddress::litecoin_testnet();break;
 						case 'devcoin': $devcoin = CoinAddress::devcoin();break;
+						case 'devcoin_testnet': $devcoin_testnet = CoinAddress::devcoin_testnet();break;
 						case 'ppcoin': $ppcoin = CoinAddress::ppcoin();break;
+						case 'ppcoin_testnet': $ppcoin_testnet = CoinAddress::ppcoin_testnet();break;
 					}
 				}
 				
@@ -534,6 +539,11 @@ bitcoin : " . @$bitcoin['private'] .' ' . @$bitcoin['public'] . "
 namecoin: " . @$namecoin['private'] .' ' . @$namecoin['public'] . "
 devcoin : " . @$devcoin['private'] .' ' . @$devcoin['public'] . "
 ppcoin  : " . @$ppcoin['private'] .' ' . @$ppcoin['public'] . "
+
+bitcoin_testnet : " . @$bitcoin_testnet['private'] .' ' . @$bitcoin_testnet['public'] . "
+namecoin_testnet: " . @$namecoin_testnet['private'] .' ' . @$namecoin_testnet['public'] . "
+devcoin_testnet : " . @$devcoin_testnet['private'] .' ' . @$devcoin_testnet['public'] . "
+ppcoin_testnet  : " . @$ppcoin_testnet['private'] .' ' . @$ppcoin_testnet['public'] . "
 
 debug:$debug 
 reuse_keys:$reuse_keys 
