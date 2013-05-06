@@ -56,8 +56,8 @@ table, td {
 		;
 
 	} else {
-		if( !$this->hide_wallet_errors ) { 	
+		//if( !$this->hide_wallet_errors ) { 	
 			print 'Not Connected to Wallet';
-		}
+		//}
 	}
 ?></pre>
