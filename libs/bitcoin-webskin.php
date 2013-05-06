@@ -498,12 +498,33 @@ class BitcoinWebskin {
 
 				$debug = $this->get_get('debug', '');
 				$reuse_keys = $this->get_get('reuse_keys', '');
-				$coins = $this->get_get('coin[]', '');
+				$coins = @$_GET['coin'];
+				
+				if( !$coins || !is_array($coins) ) { 
+					print 'ERROR: no coin type'; exit;
+				}
+				
+				$bitcoin_addr = $namecoin_addr = $litecoin_addr = $devcoin_addr = $ppcoin_addr = 0;
+				while( list(,$x) = each($coins) ) {
+					switch( $x ) { 
+						case 'bitcoin': $bitcoin_addr = 1; break;
+						case 'namecoin': $namecoin_addr = 1; break;
+						case 'litecoin': $litecoin_addr = 1; break;
+						case 'devcoin': $devcoin_addr = 1; break;
+						case 'ppcoin':  $ppcoin_addr = 1; break;
+					}
+				}
+				
+				$this->PHPCoinAddress = "debug:$debug 
+				<hr>reuse_keys:$reuse_keys 
+				<hr>bitcoin:$bitcoin_addr
+				<hr>namecoin:$namecoin_addr
+				<hr>devcoin:$devcoin_addr
+				<hr>ppcoin:$ppcoin_addr
+		
+				";
 				
 				
-				
-				
-				$this->PHPCoinAddress = "debug:$debug reuse_keys:$reuse_keys coins:$coins";
 				return 'debug';
 				//return 'PHPCoinAddress';
 				break;
