@@ -4,7 +4,7 @@
 	Copyright (c) 2011 14STzHS8qjsDPtqpQgcnwWpTaSHadgEewS
 */
 ?><html><head><title>Fatal Error</title></head><body>
-<pre><a href="./">Bitcoin Webskin</a> @ <?php print date('r'); ?> 
+<pre><a href="./">Feathercoin Webskin</a> @ <?php print date('r'); ?> 
 
   Fatal Error 
   
