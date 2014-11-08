@@ -20,8 +20,8 @@ define('SERVER_LOCALHOST', 		true);   // is server on localhost? true / false
 define('SERVER_LOCALHOST_TYPE', 'linux');  // type:  windows, linux
 #define('WINDOWS_TASKLIST', 		'C:\Windows\System32\tasklist.exe');
 
-define('SERVER',         		'/usr/local/bin/featehrcoind');  // full pathname to bitcoind executable
-define('SERVER_NAME',    		'featehrcoind'); // name only of bitcoind executable
+define('SERVER',         		'/usr/local/bin/feathercoind');  // full pathname to bitcoind executable
+define('SERVER_NAME',    		'feathercoind'); // name only of bitcoind executable
 define('SERVER_TESTNET',    	true); // use testnet?  true / false
 define('SERVER_DATADIR', 		'/home/pi/.feathercoin');  // location of data dir
-define('SERVER_CONF',    		'/home/pi/featehrcoin/feathercoin.conf'); // location of conf file
+define('SERVER_CONF',    		'/home/pi/feathercoin/feathercoin.conf'); // location of conf file
