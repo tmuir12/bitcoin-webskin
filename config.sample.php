@@ -22,6 +22,6 @@ define('SERVER_LOCALHOST_TYPE', 'linux');  // type:  windows, linux
 
 define('SERVER',         		'/usr/local/bin/feathercoind');  // full pathname to bitcoind executable
 define('SERVER_NAME',    		'feathercoind'); // name only of bitcoind executable
-define('SERVER_TESTNET',    	true); // use testnet?  true / false
+define('SERVER_TESTNET',    	fasle); // use testnet?  true / false
 define('SERVER_DATADIR', 		'/home/pi/.feathercoin');  // location of data dir
 define('SERVER_CONF',    		'/home/pi/feathercoin/feathercoin.conf'); // location of conf file
